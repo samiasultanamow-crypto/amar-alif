@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Amar Alif</title>
+<!-- Aesthetic & Cute Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body { 
+    background: #d4c5b3; 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden;
+    font-family: 'Patrick Hand', cursive;
+  }
+
+  /* Device Display Frame */
+  .device-frame {
+    width: 95%;
+    max-width: 480px;
+    height: 85vh;
+    max-height: 680px;
+    background: #f5efe6; 
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(74, 53, 37, 0.3);
+    border: 3px solid #a89480;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Smooth Slide Motion Mechanics */
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    transform: scale(0.9);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  }
+
+  .slide.active {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Aesthetic Typography */
+  h2 {
+    color: #4a3525;
+    font-size: 26px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  button.sys-btn {
+    background: #8c6d53;
+    color: #fff;
+    border: none;
+    padding: 10px 28px;
+    font-size: 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(140, 109, 83, 0.3);
+    transition: all 0.3s ease;
+    font-family: 'Patrick Hand', cursive;
+  }
+  button.sys-btn:hover { background: #6b513c; transform: translateY(-2px); }
+  button.sys-btn:active { transform: translateY(0); }
+
+  .btn-group { display: flex; gap: 15px; margin-top: 15px; }
+
+  /* --- REAL INSTAGRAM SNOOPY DOG MODEL (CSS ART) --- */
+  .snoopy-container { width: 110px; height: 140px; position: relative; margin-bottom: 15px; }
+  .snoopy-head { width: 75px; height: 50px; background: #ffffff; border-radius: 35px 50px 30px 35px; position: absolute; top: 15px; left: 15px; border: 2px solid #332211; z-index: 3; }
+  .snoopy-ear-black { width: 22px; height: 42px; background: #2b2017; border-radius: 12px 12px 18px 18px; position: absolute; top: 20px; left: 22px; z-index: 4; transform: rotate(5deg); }
+  .snoopy-eye-dot { width: 5px; height: 7px; background: #332211; border-radius: 50%; position: absolute; top: 25px; right: 26px; z-index: 5; }
+  .snoopy-nose-black { width: 12px; height: 11px; background: #2b2017; border-radius: 50%; position: absolute; top: 24px; right: -5px; z-index: 5; }
+  .snoopy-blush-pink { width: 10px; height: 6px; background: #ffb3b3; border-radius: 50%; position: absolute; top: 34px; right: 20px; z-index: 4; opacity: 0.7; }
+  .snoopy-body-white { width: 50px; height: 65px; background: #ffffff; border-radius: 40% 40% 35% 35%; position: absolute; bottom: 12px; left: 28px; border: 2px solid #332211; z-index: 2; }
+  .snoopy-arm { width: 22px; height: 14px; background: #ffffff; border-radius: 10px; position: absolute; top: 76px; left: 45px; border: 2px solid #332211; z-index: 5; transform: rotate(-10deg); }
+  
+  .snoopy-container.holding-love::after { content: '🌸'; font-size: 22px; position: absolute; top: 68px; left: 62px; z-index: 6; }
+  .snoopy-container.sad-dog .snoopy-head { transform: rotate(-8deg); }
+
+  /* Keypad UI Layout */
+  .lock-container { display: flex; width: 100%; height: 100%; align-items: center; justify-content: space-around; padding: 5px; }
+  .keypad-wrapper { display: flex; flex-direction: column; align-items: center; }
+  .pass-display { display: flex; gap: 8px; margin-bottom: 15px; }
+  .dot { width: 32px; height: 32px; border: 2px solid #8c6d53; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px; color: #4a3525; background: #fff; font-weight: bold; }
+  .keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .key { width: 42px; height: 42px; background: #fff; border: 2px solid #dcd1c4; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #6b513c; cursor: pointer; font-weight: bold; transition: all 0.2s; }
+  .key:active { background: #8c6d53; color: #fff; }
+  .next-trigger { margin-top: 12px; align-self: flex-end; font-size: 20px; color: #8c6d53; cursor: pointer; font-weight: bold; display: flex; align-items: center; gap: 5px; }
+
+  /* --- PREMIUM INSTAGRAM GOLDEN CROWN --- */
+  .instagram-crown {
+    width: 130px; height: 75px; position: relative; margin: 25px 0;
+    filter: drop-shadow(0 6px 10px rgba(184, 134, 11, 0.3));
+    display: inline-block;
+  }
+  .crown-base-curve {
+    width: 100%; height: 16px; background: linear-gradient(to right, #d4af37, #ffd700, #b8860b);
+    border: 2px solid #684c0c; border-radius: 50% / 40%; position: absolute; bottom: 0; z-index: 5;
+  }
+  .crown-body-gold {
+    width: 100%; height: 60px; position: absolute; bottom: 6px;
+    background: linear-gradient(135deg, #ffd700, #e6b800, #b8860b);
+    border: 2px solid #684c0c; border-bottom: none;
+    clip-path: polygon(0% 100%, 0% 25%, 20% 55%, 50% 0%, 80% 55%, 100% 25%, 100% 100%);
+    z-index: 3;
+  }
+  .crown-jewel-tip {
+    width: 8px; height: 8px; background: #fff; border: 2px solid #684c0c; border-radius: 50%;
+    position: absolute; z-index: 6;
+  }
+  .tip-left { top: 12px; left: -2px; }
+  .tip-mid { top: -4px; left: 50%; transform: translateX(-50%); }
+  .tip-right { top: 12px; right: -2px; }
+
+  /* --- DOUBLE TIER CAKE --- */
+  .cake-wrapper { width: 200px; height: 180px; position: relative; margin: 25px 0; }
+  .cake-layer { background: #b0957d; border-radius: 12px 12px 4px 4px; border: 2px solid #7c6451; position: absolute; left: 50%; transform: translateX(-50%); }
+  .cake-layer::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 15px; background: #f3e5d8; border-radius: 10px 10px 0 0; }
+  .layer-bottom { width: 160px; height: 65px; bottom: 10px; }
+  .layer-top { width: 110px; height: 55px; bottom: 73px; }
+  .candles-row { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+  .mini-candle { width: 6px; height: 30px; background: #d9af8f; position: relative; border-radius: 2px; }
+  .fire { width: 8px; height: 12px; background: #ff943d; border-radius: 50% 50% 20% 20%; position: absolute; top: -14px; left: -1px; animation: wave 0.5s infinite alternate; }
+  @keyframes wave { 0% { transform: scale(1); } 100% { transform: scale(1.15) translateY(-1px); } }
+
+  /* --- VINTAGE ENVELOPE --- */
+  .aesthetic-envelope {
+    width: 150px; height: 100px; background: #e1d3c1; border: 2px solid #a89480; border-radius: 8px;
+    position: relative; margin: 30px 0; cursor: pointer; transition: transform 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  }
+  .aesthetic-envelope:hover { transform: scale(1.06); }
+  .envelope-flap {
+    position: absolute; top: 0; left: 0; width: 0; height: 0;
+    border-left: 73px solid transparent; border-right: 73px solid transparent;
+    border-top: 55px solid #cbbaa7; z-index: 2;
+  }
+  .envelope-heart {
+    position: absolute; top: 40px; left: 61px; width: 24px; height: 24px;
+    background: #b85c5c; transform: rotate(45deg); z-index: 3;
+  }
+  .envelope-heart::before, .envelope-heart::after {
+    content: ''; width: 24px; height: 24px; background: #b85c5c; border-radius: 50%; position: absolute;
+  }
+  .envelope-heart::before { top: -12px; left: 0; }
+  .envelope-heart::after { left: -12px; top: 0; }
+
+  /* --- SNOOPY LETTER LAYOUT --- */
+  .snoopy-letter-layout {
+    width: 100%; height: 100%; display: flex; flex-direction: column;
+    background: #eedec9; border-radius: 16px; padding: 15px; position: relative; justify-content: space-between;
+    border: 2px solid #c9b9a5; overflow: hidden;
+  }
+
+  /* Vector Star Decors */
+  .vector-star { position: absolute; width: 12px; height: 12px; background: #bc9f84; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); opacity: 0.5; }
+  .vstar1 { top: 15px; left: 20px; }
+  .vstar2 { top: 25px; right: 35px; background: #a1836a; }
+  .vstar3 { bottom: 80px; left: 40px; }
+  .vstar4 { bottom: 130px; right: 20px; }
+
+  .letter-main-row {
+    display: flex; width: 100%; align-items: center; justify-content: space-between; flex-grow: 1; margin: 5px 0;
+  }
+
+  .letter-snoopy-left, .letter-snoopy-right { width: 75px; height: 110px; position: relative; flex-shrink: 0; }
+  .letter-snoopy-left::before { content: '🎂'; font-size: 18px; position: absolute; bottom: 5px; right: -2px; z-index: 6; }
+  .letter-snoopy-right::before { content: '🎈'; font-size: 20px; position: absolute; top: -18px; left: 15px; z-index: 6; }
+
+  .message-paragraph-box {
+    flex-grow: 1; padding: 0 10px; text-align: justify;
+    font-size: 17.5px; line-height: 1.42; color: #402d1f;
+    font-weight: 600; word-break: break-word;
+  }
+  .signature-tag { font-size: 20px; color: #6e4e37; text-align: right; width: 100%; padding-right: 15px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="device-frame">
+
+  <!-- Slide 1: Lock Screen Layout -->
+  <div class="slide active" id="slide1">
+    <h2 style="margin-bottom: 5px; font-family: 'Fredoka', sans-serif;">Enter Security Code</h2>
+    <p style="color:#7c6451; margin-bottom:20px; font-size: 17px;">Hint: Alif's Birthday</p>
+    <div class="lock-container">
+      <div class="snoopy-container holding-love">
+        <div class="snoopy-body-white"></div>
+        <div class="snoopy-head">
+          <div class="snoopy-ear-black"></div>
+          <div class="snoopy-eye-dot"></div>
+          <div class="snoopy-nose-black"></div>
+          <div class="snoopy-blush-pink"></div>
+        </div>
+        <div class="snoopy-arm"></div>
+      </div>
+      <div class="keypad-wrapper">
+        <div class="pass-display">
+          <div class="dot" id="d0"></div>
+          <div class="dot" id="d1"></div>
+          <div class="dot" id="d2"></div>
+          <div class="dot" id="d3"></div>
+        </div>
+        <div class="keypad">
+          <div class="key" onclick="pressKey('1')">1</div>
+          <div class="key" onclick="pressKey('2')">2</div>
+          <div class="key" onclick="pressKey('3')">3</div>
+          <div class="key" onclick="pressKey('4')">4</div>
+          <div class="key" onclick="pressKey('5')">5</div>
+          <div class="key" onclick="pressKey('6')">6</div>
+          <div class="key" onclick="pressKey('7')">7</div>
+          <div class="key" onclick="pressKey('8')">8</div>
+          <div class="key" onclick="pressKey('9')">9</div>
+          <div class="key" onclick="clearPass()">C</div>
+          <div class="key" onclick="pressKey('0')">0</div>
+        </div>
+        <div class="next-trigger" onclick="verifyPassword()">Next ➔</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2: Access Denied Gate -->
+  <div class="slide" id="slide2">
+    <h2>Why are you here??<br>Go Away</h2>
+    <div class="snoopy-container sad-dog" style="margin: 20px 0;">
+      <div class="snoopy-body-white"></div>
+      <div class="snoopy-head">
+        <div class="snoopy-ear-black"></div>
+        <div class="snoopy-eye-dot" style="width:6px; height:2px; border-radius:0;"></div>
+        <div class="snoopy-nose-black"></div>
+      </div>
+    </div>
+    <button class="sys-btn" onclick="nextSlide(1)">BACK</button>
+  </div>
+
+  <!-- Slide 3: Verification Check -->
+  <div class="slide" id="slide3">
+    <h2>This site is special to Alif,<br>are you Alif?</h2>
+    <div class="btn-group">
+      <button class="sys-btn" onclick="nextSlide('3_crown')">YES</button>
+      <button class="sys-btn" onclick="nextSlide(2)">NO</button>
+    </div>
+  </div>
+
+  <!-- Slide 4: Crown Delivery -->
+  <div class="slide" id="slide3_crown">
+    <h2>Finally this man is here.<br>Please take this crown king its your special day</h2>
+    <div class="instagram-crown">
+      <div class="crown-jewel-tip tip-left"></div>
+      <div class="crown-jewel-tip tip-mid"></div>
+      <div class="crown-jewel-tip tip-right"></div>
+      <div class="crown-body-gold"></div>
+      <div class="crown-base-curve"></div>
+    </div>
+    <!-- DIRECT ROUTE TO CAKE SLIDE (SLIDE 6) -->
+    <button class="sys-btn" onclick="nextSlide(6)">TAKE</button>
+  </div>
+
+  <!-- Slide 6: Custom Cake Simulation -->
+  <div class="slide" id="slide6">
+    <h2>Now its time to make a wish</h2>
+    <div class="cake-wrapper">
+      <div class="candles-row" id="candlesRow">
+        <div class="mini-candle"><div class="fire"></div></div>
+        <div class="mini-candle"><div class="fire"></div></div>
+        <div class="mini-candle"><div class="fire"></div></div>
+        <div class="mini-candle"><div class="fire"></div></div>
+        <div class="mini-candle"><div class="fire"></div></div>
+      </div>
+      <div class="cake-layer layer-top"></div>
+      <div class="cake-layer layer-bottom"></div>
+    </div>
+    <button class="sys-btn" onclick="blowCandles()">BLOW</button>
+  </div>
+
+  <!-- Slide 7: Custom Header Screen -->
+  <div class="slide" id="slide7">
+    <h2 style="font-size: 34px; color: #5c4331; font-family: 'Fredoka', sans-serif; margin-bottom:0;">Happy Birthday Amar Alif</h2>
+    <p style="font-size: 20px; color:#8c6d53; margin-top:10px;">An Aesthetic Gift Just For You</p>
+    <button class="sys-btn" style="margin-top:25px;" onclick="nextSlide(8)">NEXT</button>
+  </div>
+
+  <!-- Slide 8: Present Box / Gift Box Envelope -->
+  <div class="slide" id="slide8">
+    <h2>I have a special gift for you.<br>Tap on the gift to open</h2>
+    <div class="aesthetic-envelope" onclick="nextSlide(9)">
+      <div class="envelope-flap"></div>
+      <div class="envelope-heart"></div>
+    </div>
+  </div>
+
+  <!-- Slide 9: SNOOPY DESIGNED LETTER SLIDE -->
+  <div class="slide" id="slide9" style="padding: 12px;">
+    <div class="snoopy-letter-layout">
+      <div class="vector-star vstar1"></div>
+      <div class="vector-star vstar2"></div>
+      <div class="vector-star vstar3"></div>
+      <div class="vector-star vstar4"></div>
+
+      <div class="letter-main-row">
+        <!-- Left Snoopy Vector -->
+        <div class="letter-snoopy-left">
+          <div class="snoopy-body-white" style="transform: scale(0.85); bottom: 5px; left: 5px;"></div>
+          <div class="snoopy-head" style="transform: scale(0.85); top: 10px; left: 0;">
+            <div class="snoopy-ear-black"></div><div class="snoopy-eye-dot"></div><div class="snoopy-nose-black"></div>
+          </div>
+        </div>
+
+        <!-- Message Box -->
+        <div class="message-paragraph-box">
+          **শুভ জন্মদিন, আমার আলিফ!** <br>
+          আজ আপনার ২০তম জন্মদিন, আর আমার কাছে এই দিনটা পুরো বছরের সবচেয়ে আনন্দের ও স্পেশাল। সুন্দর সুন্দর শব্দ দিয়ে গুছিয়ে কথা বলতে পারি না আমি, তবে মন থেকে বলতে পারি—আমি আপনাকে কতটা ভালোবাসি, তা কখনো ভাষায় প্রকাশ করা সম্ভব নয়। আমার প্রতিটি দিনের প্রতিটা মুহূর্ত এবং আমার ভালো থাকার পুরো আকাশটাই শুধু আপনাকে ঘিরে। জীবনের যেকোনো পরিস্থিতিতে, আপনার পাশে থাকার এবং আপনার মুখে সবসময় হাসি ফুটিয়ে রাখার অধিকারটুকু আমি আজীবন নিজের কাছে রাখতে চাই। খুব ভালো থাকবেন ( বাবা-মায়ের জন্য, নিজের জন্য, আমার জন্য), আপনার সব স্বপ্ন সত্যি হোক।
+        </div>
+
+        <!-- Right Snoopy Vector -->
+        <div class="letter-snoopy-right">
+          <div class="snoopy-body-white" style="transform: scale(0.85); bottom: 5px; left: 5px;"></div>
+          <div class="snoopy-head" style="transform: scale(0.85); top: 10px; left: 0;">
+            <div class="snoopy-ear-black"></div><div class="snoopy-eye-dot"></div><div class="snoopy-nose-black"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="signature-tag">— আপনার আমি।</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  let enteredPass = "";
+
+  function pressKey(num) {
+    if (enteredPass.length < 4) {
+      enteredPass += num;
+      updatePassDisplay();
+    }
+  }
+
+  function clearPass() {
+    enteredPass = "";
+    updatePassDisplay();
+  }
+
+  function updatePassDisplay() {
+    for (let i = 0; i < 4; i++) {
+      let dot = document.getElementById('d' + i);
+      dot.textContent = enteredPass[i] ? "•" : "";
+    }
+  }
+
+  function verifyPassword() {
+    if (enteredPass === "2909") {
+      clearPass();
+      nextSlide(3);
+    } else {
+      clearPass();
+      nextSlide(2);
+    }
+  }
+
+  function nextSlide(slideId) {
+    document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+    let targetId = 'slide' + slideId;
+    setTimeout(() => {
+      let element = document.getElementById(targetId);
+      if(element) element.classList.add('active');
+    }, 50);
+  }
+
+  function blowCandles() {
+    let fires = document.querySelectorAll('.fire');
+    fires.forEach(f => f.style.display = 'none');
+    setTimeout(() => { nextSlide(7); }, 900);
+  }
+</script>
+
+</body>
+</html>
