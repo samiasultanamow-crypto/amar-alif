@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Amar Alif</title>
+<!-- Aesthetic & Cute Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
@@ -21,6 +22,7 @@
     font-family: 'Patrick Hand', cursive;
   }
 
+  /* Device Display Frame */
   .device-frame {
     width: 95%;
     max-width: 480px;
@@ -34,6 +36,7 @@
     overflow: hidden;
   }
 
+  /* Smooth Slide Motion Mechanics */
   .slide {
     position: absolute;
     width: 100%;
@@ -57,6 +60,7 @@
     visibility: visible;
   }
 
+  /* Aesthetic Typography */
   h2 {
     color: #4a3525;
     font-size: 26px;
@@ -81,7 +85,7 @@
 
   .btn-group { display: flex; gap: 15px; margin-top: 15px; }
 
-  /* SNOOPY CSS */
+  /* --- REAL INSTAGRAM SNOOPY DOG MODEL (CSS ART) --- */
   .snoopy-container { width: 110px; height: 140px; position: relative; margin-bottom: 15px; }
   .snoopy-head { width: 75px; height: 50px; background: #ffffff; border-radius: 35px 50px 30px 35px; position: absolute; top: 15px; left: 15px; border: 2px solid #332211; z-index: 3; }
   .snoopy-ear-black { width: 22px; height: 42px; background: #2b2017; border-radius: 12px 12px 18px 18px; position: absolute; top: 20px; left: 22px; z-index: 4; transform: rotate(5deg); }
@@ -94,7 +98,7 @@
   .snoopy-container.holding-love::after { content: '🌸'; font-size: 22px; position: absolute; top: 68px; left: 62px; z-index: 6; }
   .snoopy-container.sad-dog .snoopy-head { transform: rotate(-8deg); }
 
-  /* Keypad UI */
+  /* Keypad UI Layout */
   .lock-container { display: flex; width: 100%; height: 100%; align-items: center; justify-content: space-around; padding: 5px; }
   .keypad-wrapper { display: flex; flex-direction: column; align-items: center; }
   .pass-display { display: flex; gap: 8px; margin-bottom: 15px; }
@@ -104,7 +108,7 @@
   .key:active { background: #8c6d53; color: #fff; }
   .next-trigger { margin-top: 8px; align-self: flex-end; font-size: 20px; color: #8c6d53; cursor: pointer; font-weight: bold; display: flex; align-items: center; gap: 5px; }
 
-  /* Crown */
+  /* --- PREMIUM INSTAGRAM GOLDEN CROWN --- */
   .instagram-crown {
     width: 130px; height: 75px; position: relative; margin: 25px 0;
     filter: drop-shadow(0 6px 10px rgba(184, 134, 11, 0.3));
@@ -129,7 +133,7 @@
   .tip-mid { top: -4px; left: 50%; transform: translateX(-50%); }
   .tip-right { top: 12px; right: -2px; }
 
-  /* Cake */
+  /* --- DOUBLE TIER CAKE --- */
   .cake-wrapper { width: 200px; height: 180px; position: relative; margin: 25px 0; }
   .cake-layer { background: #b0957d; border-radius: 12px 12px 4px 4px; border: 2px solid #7c6451; position: absolute; left: 50%; transform: translateX(-50%); }
   .cake-layer::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 15px; background: #f3e5d8; border-radius: 10px 10px 0 0; }
@@ -140,7 +144,7 @@
   .fire { width: 8px; height: 12px; background: #ff943d; border-radius: 50% 50% 20% 20%; position: absolute; top: -14px; left: -1px; animation: wave 0.5s infinite alternate; }
   @keyframes wave { 0% { transform: scale(1); } 100% { transform: scale(1.15) translateY(-1px); } }
 
-  /* Envelope */
+  /* --- VINTAGE ENVELOPE --- */
   .aesthetic-envelope {
     width: 150px; height: 100px; background: #e1d3c1; border: 2px solid #a89480; border-radius: 8px;
     position: relative; margin: 30px 0; cursor: pointer; transition: transform 0.3s ease;
@@ -162,7 +166,7 @@
   .envelope-heart::before { top: -12px; left: 0; }
   .envelope-heart::after { left: -12px; top: 0; }
 
-  /* FIX FOR SNOOPY LETTER LAYOUT */
+  /* --- SNOOPY LETTER LAYOUT --- */
   .snoopy-letter-layout {
     width: 100%; 
     height: 100%; 
@@ -177,6 +181,7 @@
     overflow: hidden;
   }
 
+  /* Vector Star Decors */
   .vector-star { position: absolute; width: 12px; height: 12px; background: #bc9f84; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); opacity: 0.5; }
   .vstar1 { top: 15px; left: 20px; }
   .vstar2 { top: 25px; right: 35px; background: #a1836a; }
@@ -185,17 +190,15 @@
 
   .message-paragraph-box {
     width: 100%;
-    text-align: center;
-    font-size: 17px; 
-    line-height: 1.4; 
+    text-align: left; /* চিঠির নিয়ম অনুযায়ী বামপাশে নিয়ে আসা হয়েছে */
+    font-size: 16.5px; 
+    line-height: 1.45; 
     color: #402d1f;
     font-weight: 600; 
     word-break: break-word;
     margin: 10px 0;
     flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0 5px;
   }
 
   .snoopy-decor-row {
@@ -219,7 +222,7 @@
 
 <div class="device-frame">
 
-  <!-- Slide 1 -->
+  <!-- Slide 1: Lock Screen Layout -->
   <div class="slide active" id="slide1">
     <h2 style="margin-bottom: 5px; font-family: 'Fredoka', sans-serif;">Enter Security Code</h2>
     <p style="color:#7c6451; margin-bottom:20px; font-size: 17px;">Hint: Alif's Birth date</p>
@@ -259,7 +262,7 @@
     </div>
   </div>
 
-  <!-- Slide 2 -->
+  <!-- Slide 2: Access Denied Gate -->
   <div class="slide" id="slide2">
     <h2>Why are you here??<br>Go Away</h2>
     <div class="snoopy-container sad-dog" style="margin: 20px 0;">
@@ -273,7 +276,7 @@
     <button class="sys-btn" onclick="nextSlide(1)">BACK</button>
   </div>
 
-  <!-- Slide 3 -->
+  <!-- Slide 3: Verification Check -->
   <div class="slide" id="slide3">
     <h2>This site is special to Alif,<br>are you Alif?</h2>
     <div class="btn-group">
@@ -282,7 +285,7 @@
     </div>
   </div>
 
-  <!-- Slide 4 -->
+  <!-- Slide 4: Crown Delivery -->
   <div class="slide" id="slide3_crown">
     <h2>Finally you are here.<br>Please take this crown king its your special day</h2>
     <div class="instagram-crown">
@@ -295,7 +298,7 @@
     <button class="sys-btn" onclick="nextSlide(6)">TAKE</button>
   </div>
 
-  <!-- Slide 6 -->
+  <!-- Slide 6: Custom Cake Simulation -->
   <div class="slide" id="slide6">
     <h2>Now its time to make a wish</h2>
     <div class="cake-wrapper">
@@ -312,14 +315,14 @@
     <button class="sys-btn" onclick="blowCandles()">BLOW</button>
   </div>
 
-  <!-- Slide 7 -->
+  <!-- Slide 7: Custom Header Screen -->
   <div class="slide" id="slide7">
     <h2 style="font-size: 34px; color: #5c4331; font-family: 'Fredoka', sans-serif; margin-bottom:0;">Happy Birthday Amar Alif</h2>
     <p style="font-size: 20px; color:#8c6d53; margin-top:10px;">A little Aesthetic Gift Just For You</p>
     <button class="sys-btn" style="margin-top:25px;" onclick="nextSlide(8)">NEXT</button>
   </div>
 
-  <!-- Slide 8 -->
+  <!-- Slide 8: Present Box / Gift Box Envelope -->
   <div class="slide" id="slide8">
     <h2>I have a very little gift for you.<br>Tap on the heart to open</h2>
     <div class="aesthetic-envelope" onclick="nextSlide(9)">
@@ -328,7 +331,7 @@
     </div>
   </div>
 
-  <!-- Slide 9: FIXED PART 1 -->
+  <!-- Slide 9: SNOOPY DESIGNED LETTER SLIDE (PART 1) -->
   <div class="slide" id="slide9" style="padding: 12px;">
     <div class="snoopy-letter-layout">
       <div class="vector-star vstar1"></div>
@@ -347,10 +350,10 @@
         </div>
       </div>
 
-      <!-- Message Box -->
+      <!-- Message Box Part 1 -->
       <div class="message-paragraph-box">
         শুভ জন্মদিন! <br> 
-        আমার আলিফ❀  <br><br>
+        আমার আলিফ❀,<br><br>
         আজ আপনার ২০তম জন্মদিন। আর আমার কাছে এই দিনটা পুরো বছরের সবচেয়ে আনন্দের ও স্পেশাল। সুন্দর সুন্দর শব্দ দিয়ে গুছিয়ে কথা বলতে পারি না, তবে মন থেকে বলতে পারি—আমি আপনাকে কতটা ভালোবাসি, তা কখনো ভাষায় প্রকাশ করা সম্ভব নয়। আমার প্রতিটা দিনের প্রতিটা মুহূর্ত এবং আমার ভালো থাকার পুরো আকাশটাই আপনাকে ঘিরে। জানি জন্মদিনে শুভেচ্ছা অনেকেই জানাবে। কিন্তু আমি চাই আমার শুভেচ্ছাটা আপনার কাছে আলাদা হোক। কারণ...
       </div>
 
@@ -362,7 +365,7 @@
     </div>
   </div>
 
-  <!-- Slide 10: FIXED PART 2 -->
+  <!-- Slide 10: SNOOPY DESIGNED LETTER SLIDE (PART 2) -->
   <div class="slide" id="slide10" style="padding: 12px;">
     <div class="snoopy-letter-layout">
       <div class="vector-star vstar1"></div>
